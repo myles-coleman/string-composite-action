@@ -15,5 +15,5 @@
     using: "composite"
     steps:  
       - id: output-string
-        run: echo "string=${{ inputs.input-string }}" >> $GITHUB_OUTPUT
+        run: echo "::set-output name=string-output::${{ inputs.input-string }}" >> $GITHUB_OUTPUT
         shell: bash
