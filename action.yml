@@ -6,8 +6,12 @@ inputs:
     required: true
     default: 'defaultString'
 
+outputs:
+  output-string:
+    description: 'The output string'
+
 runs:
   using: "composite"
   steps:
-    - run: echo ${{ inputs.input-string }}.
+    - run: echo "::set-output name=output-string::${{ inputs.input-string }}"
       shell: bash
