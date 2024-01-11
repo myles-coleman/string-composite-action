@@ -5,25 +5,19 @@
       description: 'what is the string to output'
       required: true
       default: 'defaultString'
+
   outputs:
     string-output:
       description: 'The output string'
 
   runs:
     using: "composite"
-    steps:
-
-      - name: Debug Output
-        run: echo "${{ inputs.input-string }}"
-        shell: bash
+    steps:  
 
       - id: output-string
-        run: echo "::set-output name=string-output::${{ inputs.input-string }}"
-        shell: bash
-
-      - run: echo "${{ github.action_path }}" >> $GITHUB_PATH
+        run: echo "${{ inputs.input-string }}" >> $GITHUB_OUTPUT
         shell: bash
 
       - name: Save Output to File
-        run: echo "${{ steps.output-string.outputs.string-output }}" > ~/Desktop/bootcamp-dir1/artifact/string.txt
+        run: echo "${{ inputs.input-string }}" > ~/Desktop/bootcamp-dir1/artifact/string.txt
         shell: bash
