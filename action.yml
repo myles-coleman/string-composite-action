@@ -9,6 +9,7 @@ inputs:
 outputs:
   output-string:
     description: 'The output string'
+    value: steps.output-string.outputs.output-string
 
 runs:
   using: "composite"
