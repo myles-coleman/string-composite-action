@@ -15,7 +15,7 @@
     steps:  
 
       - id: output-string
-        run: echo "${{ inputs.input-string }}" >> $GITHUB_OUTPUT
+        run: echo "string=${{ inputs.input-string }}" >> $GITHUB_OUTPUT
         shell: bash
 
       - name: Save Output to File
