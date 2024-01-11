@@ -5,17 +5,16 @@ inputs:
     description: 'what is the string to output'
     required: true
     default: 'defaultString'
-
 outputs:
   string-output:
     description: 'The output string'
-    value: ${{ inputs.input-string }}
+    value: ${{ steps.output-string.outputs.string-output }}
 
 runs:
   using: "composite"
   steps:
 
-    - name: Set Output
+    - id: output-string
     - run: echo "::set-output name=string-output::${{ inputs.input-string }}"
       shell: bash
 
