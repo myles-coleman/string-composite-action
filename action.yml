@@ -1,7 +1,7 @@
   name: 'Output String'
   description: 'Outputs a string'
   inputs:
-    input-string:  # id of input
+    input-string:  
       description: 'what is the string to output'
       required: true
       default: 'defaultString'
@@ -9,12 +9,11 @@
   outputs:
     string-output:
       description: 'The output string'
-      value: ${{ steps.output-string.outputs.string }}
+      value: ${{ steps.output-string.outputs.string-output }}
 
   runs:
     using: "composite"
     steps:  
-
       - id: output-string
         run: echo "string=${{ inputs.input-string }}" >> $GITHUB_OUTPUT
         shell: bash
