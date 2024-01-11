@@ -9,10 +9,13 @@ inputs:
 outputs:
   output-string:
     description: 'The output string'
-    value: steps.output-string.outputs.output-string
 
 runs:
   using: "composite"
   steps:
+  
+    - name: Debug Input
+      run: echo "Input Value: ${{ inputs.input-string }}"
+
     - run: echo "::set-output name=output-string::${{ inputs.input-string }}"
       shell: bash
