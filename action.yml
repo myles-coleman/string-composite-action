@@ -14,7 +14,7 @@
     steps:
 
       - name: Debug Output
-        run: echo "${{ sinputs.input-string }}"
+        run: echo "${{ inputs.input-string }}"
         shell: bash
 
       - id: output-string
