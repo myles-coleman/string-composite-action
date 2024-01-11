@@ -1,6 +1,6 @@
   name: 'Output String'
   description: 'Outputs a string'
-  
+
   inputs:
     input-string:  
       description: 'what is the string to output'
@@ -8,7 +8,7 @@
       default: 'defaultString'
 
   outputs:
-    string-output:
+    string:
       description: 'The output string'
       value: ${{ steps.output-string.outputs.string }}
 
