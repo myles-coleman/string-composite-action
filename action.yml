@@ -18,7 +18,7 @@
         shell: bash
 
       - id: output-string
-      - run: echo "::set-output name=string-output::${{ inputs.input-string }}"
+        run: echo "::set-output name=string-output::${{ inputs.input-string }}"
         shell: bash
 
       - run: echo "${{ github.action_path }}" >> $GITHUB_PATH
