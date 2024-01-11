@@ -1,5 +1,6 @@
   name: 'Output String'
   description: 'Outputs a string'
+  
   inputs:
     input-string:  
       description: 'what is the string to output'
@@ -9,11 +10,11 @@
   outputs:
     string-output:
       description: 'The output string'
-      value: ${{ steps.output-string.outputs.string-output }}
+      value: ${{ steps.output-string.outputs.string }}
 
   runs:
     using: "composite"
     steps:  
       - id: output-string
-        run: echo "::set-output name=string-output::${{ inputs.input-string }}" >> $GITHUB_OUTPUT
+        run: echo "string=${{ inputs.input-string }}" >> $GITHUB_OUTPUT
         shell: bash
