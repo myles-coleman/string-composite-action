@@ -9,6 +9,7 @@
   outputs:
     string-output:
       description: 'The output string'
+      value: ${{ steps.output-string.outputs.string }}
 
   runs:
     using: "composite"
@@ -16,8 +17,4 @@
 
       - id: output-string
         run: echo "string=${{ inputs.input-string }}" >> $GITHUB_OUTPUT
-        shell: bash
-
-      - name: Save Output to File
-        run: echo "${{ inputs.input-string }}" > ~/Desktop/bootcamp-dir1/artifact/string.txt
         shell: bash
