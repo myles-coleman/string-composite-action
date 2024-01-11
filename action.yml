@@ -14,10 +14,10 @@ runs:
   using: "composite"
   steps:
 
-    - name: Debug Input
-      run: echo "Input Value: ${{ inputs.input-string }}"
-      shell: bash
+    #- name: Debug Input
+    #  run: echo "Input Value: ${{ inputs.input-string }}"
+    #  shell: bash
 
-    - name: Set Output
-    - run: echo "::set-output name=output-string::${{ inputs.input-string }}"
-      shell: bash
+    #- name: Set Output
+    #- run: echo "::set-output name=output-string::${{ inputs.input-string }}"
+    #  shell: bash
